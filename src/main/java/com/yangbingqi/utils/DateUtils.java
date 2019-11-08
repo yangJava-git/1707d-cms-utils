@@ -5,7 +5,13 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+
 public class DateUtils {
+	
+	/**
+	 * 一天有多少毫秒
+	 */
+	static final long millionSecondsPerDay = 1000 * 60 * 60 * 24;
 	
 	/*
 	* 方法1：(5分)    返回传入日期的月初
@@ -112,6 +118,29 @@ public class DateUtils {
 	System.out.println(format.format(lastDayOfWeek.getTime()));
 
 	return (date.getTime()<lastDayOfWeek.getTime().getTime() && date.getTime()>firstDayOfWeek.getTime().getTime() );
+
+	}
+	
+	/**
+	 * 计算到将来的一个日期 还剩余多少天
+	 * 
+	 * @param futureDate
+	 *            未来的某一天
+	 * @return
+	 * @throws CmsException
+	 */
+	public static String remainDays(Date futureDate){
+		/**
+		 * 给定的参数是否合法，小于当前日期则认为不合法，抛出异常
+		 */
+		if (futureDate.compareTo(new Date()) < 0) {
+			return ("未来日期不能小于当前日期 ： " + futureDate);
+		}
+
+		// 计算有多少天
+		int days = (int) ((futureDate.getTime() - new Date().getTime()) / millionSecondsPerDay);
+
+		return "还有"+days;
 
 	}
 
