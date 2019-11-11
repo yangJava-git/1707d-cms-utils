@@ -8,12 +8,17 @@ import java.util.regex.Pattern;
 public class StringUtils {
 	
 	public static boolean isListEmpty(Collection<?> src) {
-		return (src.size() == 0 && src == null);
+		for (Object object : src) {
+			if(object == " " || object == "") {
+				return false;
+			}
+		}
+		return !(src.size() == 0);
 	}
 	
 	//�п�
 	public static boolean isEmpty(String src) {		
-		return !(null != src && src.trim().length() > 0);
+		return (null != src && src.trim().length() > 0);
 	}
 	
 	//�Ƿ���ֵ
