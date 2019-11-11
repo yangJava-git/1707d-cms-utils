@@ -18,7 +18,7 @@ public class StringUtils {
 	
 	//�п�
 	public static boolean isEmpty(String src) {		
-		return (null != src && src.trim().length() > 0);
+		return !(null != src && src.trim().length() > 0);
 	}
 	
 	//�Ƿ���ֵ
