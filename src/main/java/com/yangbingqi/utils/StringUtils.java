@@ -1,22 +1,27 @@
 package com.yangbingqi.utils;
 
+import java.util.Collection;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringUtils {
 	
-	//ÅÐ¿Õ
+	public static boolean isListEmpty(Collection<?> src) {
+		return (src.size() == 0 && src == null);
+	}
+	
+	//ï¿½Ð¿ï¿½
 	public static boolean isEmpty(String src) {		
 		return !(null != src && src.trim().length() > 0);
 	}
 	
-	//ÊÇ·ñÓÐÖµ
+	//ï¿½Ç·ï¿½ï¿½ï¿½Öµ
 	public static boolean isValue(String src) {		
 		return (null != src && src.trim().length() > 0);
 	}
 	
-	//ÑéÖ¤ÊÖ»úºÅ
+	//ï¿½ï¿½Ö¤ï¿½Ö»ï¿½ï¿½ï¿½
 	public static boolean verifyPhone(String phone) {
 		String regex = "^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(17[013678])|(18[0,5-9]))\\d{8}$";
 
@@ -29,7 +34,7 @@ public class StringUtils {
 		return isMatch ;
 	}
 	
-	//ÑéÖ¤ÓÊÏä
+	//ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½
 	public static boolean verifyEmail(String email) {
 		String regEx1 = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
 
@@ -43,7 +48,7 @@ public class StringUtils {
 
 	}
 	
-	//ÑéÖ¤È«Îª×ÖÄ¸
+	//ï¿½ï¿½Ö¤È«Îªï¿½ï¿½Ä¸
 	public static boolean verifyStr(String str) {
 		String regEx1 = "[a-zA-Z]+";
 
@@ -57,7 +62,7 @@ public class StringUtils {
 
 	}
 	
-	//»ñÈ¡nÎ»Ëæ»úµÄÓ¢ÎÄ×Ö·û´®
+	//ï¿½ï¿½È¡nÎ»ï¿½ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
 	public static String randomStr(int sum) {
 		StringBuilder sb = new StringBuilder();
 
@@ -75,7 +80,7 @@ public class StringUtils {
 	}
 	
 	/**
-	 * »ñÈ¡Ëæ»úÖÐÎÄ
+	 * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @return
 	 */
 	private static char getRandomCn() {
@@ -96,7 +101,7 @@ public class StringUtils {
             str = new String(b, "GBK");
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("´íÎó");
+            System.out.println("ï¿½ï¿½ï¿½ï¿½");
         }
 
         return str.charAt(0);
