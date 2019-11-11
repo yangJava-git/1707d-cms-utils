@@ -18,12 +18,12 @@ public class StringUtils {
 	
 	//�п�
 	public static boolean isEmpty(String src) {		
-		return !(null != src && src.trim().length() > 0);
+		return !("" == src && src.trim().length() == 0);
 	}
 	
 	//�Ƿ���ֵ
 	public static boolean isValue(String src) {		
-		return (null != src && src.trim().length() > 0);
+		return ("" != src && src.trim().length() > 0);
 	}
 	
 	public static boolean isNumber(String src) {
