@@ -9,7 +9,7 @@ public class StringUtils {
 	
 	public static boolean isListEmpty(Collection<?> src) {
 		for (Object object : src) {
-			if(object == " " || object == "") {
+			if(object.equals(" ")|| object.equals("")) {
 				return false;
 			}
 		}
