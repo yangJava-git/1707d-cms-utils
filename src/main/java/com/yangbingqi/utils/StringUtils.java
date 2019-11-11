@@ -21,6 +21,18 @@ public class StringUtils {
 		return (null != src && src.trim().length() > 0);
 	}
 	
+	public static boolean isNumber(String src) {
+		String regex = "^[0-9]+";
+		
+		Pattern compile = Pattern.compile(regex);
+		
+		Matcher matcher = compile.matcher(src);
+		
+		boolean matches = matcher.matches();
+		
+		return matches;
+	}
+	
 	//��֤�ֻ���
 	public static boolean verifyPhone(String phone) {
 		String regex = "^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(17[013678])|(18[0,5-9]))\\d{8}$";
@@ -31,7 +43,7 @@ public class StringUtils {
 
 		boolean isMatch = m.matches();
 
-		return isMatch ;
+		return isMatch;
 	}
 	
 	//��֤����
