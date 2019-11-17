@@ -19,12 +19,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
+
+
 public class FileUtils {
 	
 	
 	public static String getExtendName(String fileName) {
 		if(fileName != null && fileName.trim().length()>0) {
-			return "�����ļ�Ŀ¼";
+			return "锟斤拷锟斤拷锟侥硷拷目录";
 		}
 		int lastIndexOf = fileName.lastIndexOf(".");
 		String substring = fileName.substring(fileName.lastIndexOf("."));
@@ -92,10 +94,10 @@ public class FileUtils {
 
 		}
 
-		//7.6.3.2 ���ֽڶ�ȡ�ļ�
+		//7.6.3.2 锟斤拷锟街节讹拷取锟侥硷拷
 		/**
 
-		* ���ֽڶ�ȡ�ļ�
+		* 锟斤拷锟街节讹拷取锟侥硷拷
 
 		*
 
@@ -191,10 +193,10 @@ public class FileUtils {
 
 		}
 
-		//7.6.3.3 ���ַ���ȡ�ļ�
+		//7.6.3.3 锟斤拷锟街凤拷锟斤拷取锟侥硷拷
 		/**
 
-		* ���ַ���ȡ�ļ�
+		* 锟斤拷锟街凤拷锟斤拷取锟侥硷拷
 
 		*
 
@@ -255,11 +257,11 @@ public class FileUtils {
 
 		}
 
-		//7.6.4 д���ı��ļ�
-		//ͨ��BufferedWriterд�ļ�
+		//7.6.4 写锟斤拷锟侥憋拷锟侥硷拷
+		//通锟斤拷BufferedWriter写锟侥硷拷
 		/**
 
-		* ͨ��BufferedWriterд�ļ�
+		* 通锟斤拷BufferedWriter写锟侥硷拷
 
 		*
 
@@ -349,10 +351,10 @@ public class FileUtils {
 
 		}
 
-		//ͨ��FileWriterд�ļ�
+		//通锟斤拷FileWriter写锟侥硷拷
 		/**
 
-		* ͨ��FileWriterд�ļ�
+		* 通锟斤拷FileWriter写锟侥硷拷
 
 		*
 
@@ -402,18 +404,18 @@ public class FileUtils {
 
 		}
 
-		//7.6.5 �����ļ�����
+		//7.6.5 锟斤拷锟斤拷锟侥硷拷锟斤拷锟斤拷
 		public static void download(String realPath,HttpServletRequest request,HttpServletResponse response,String filename) throws FileNotFoundException {
 
-		/* // ���ر����ļ�
+		/* // 锟斤拷锟截憋拷锟斤拷锟侥硷拷
 
-		String fileName = "Operator.doc".toString(); // �ļ���Ĭ�ϱ�����
+		String fileName = "Operator.doc".toString(); // 锟侥硷拷锟斤拷默锟较憋拷锟斤拷锟斤拷
 
-		*/ // ��������
+		*/ // 锟斤拷锟斤拷锟斤拷锟斤拷
 
-		InputStream inStream = new FileInputStream(realPath+filename);// �ļ��Ĵ��·��
+		InputStream inStream = new FileInputStream(realPath+filename);// 锟侥硷拷锟侥达拷锟铰凤拷锟�
 
-		// ��������ĸ�ʽ
+		// 锟斤拷锟斤拷锟斤拷锟斤拷母锟绞�
 
 		response.reset();
 
@@ -422,7 +424,7 @@ public class FileUtils {
 		response.addHeader("Content-Disposition", "attachment; filename=\"" + filename+"\"");
 
 		
-		// ѭ��ȡ�����е�����
+		// 循锟斤拷取锟斤拷锟斤拷锟叫碉拷锟斤拷锟斤拷
 
 		byte[] b = new byte[1024];
 
